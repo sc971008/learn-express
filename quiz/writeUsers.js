@@ -4,7 +4,7 @@ const path = require('path');
 const router = express.Router()
 
 
-router.post('/write/adduser', (req, res) => {
+router.post('/adduser', (req, res) => {
   let newuser = req.body;
   req.users.push(newuser);
   fs.writeFile(path.resolve(__dirname, '../data/users.json'), JSON.stringify(req.users), (err) => {
