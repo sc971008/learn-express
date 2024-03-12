@@ -6,11 +6,11 @@ const router = express.Router();
       return {id: user.id, username: user.username};
     });
     res.send(usernames);
-  });
+  })
 
   router.get('/username/:name',(req, res) => {
     var {name} = req.params
-    res.send(users.filter((a) => a.username === name))
+    res.send(req.users.filter((a) => a.username === name))
   })
 
   module.exports = router

@@ -53,7 +53,7 @@ app.post('/write/adduser', (req, res) => {
 app.use('/read/username', addMsgToRequest);
 app.get('/read/username/:name',(req, res) => {
   var {name} = req.params
-  res.send(users.filter((a) => a.username === name))
+  res.send(req.users.filter((a) => a.username === name))
 })
 
 app.listen(port, () => {
